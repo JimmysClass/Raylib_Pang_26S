@@ -4,6 +4,8 @@
 
 #include "Game.h"
 #include "Ball.h"
+#include "Shape.h"
+#include "Rectangle.h"
 #include "Helpers/MathFuncs.h"
 #include "Helpers/Sprite2D.h"
 
@@ -55,6 +57,18 @@ void CGame::draw()
     {
         Ball->draw();
     }
+
+    //CShape shape;
+    //shape.draw();
+
+    //CRectangle rect;
+    //rect.draw();
+
+    CShape* shapes[2];
+    shapes[0] = new CRectangle();
+    shapes[1] = new CShape();
+    shapes[0]->draw();
+    shapes[1]->draw();
 }
 
 void CGame::onKey(int keyCode, KeyState keyState)

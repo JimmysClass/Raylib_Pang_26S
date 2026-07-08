@@ -9,12 +9,12 @@ public:
     CShape();
     ~CShape();
 
-    void draw();
+    virtual void draw();
 
-private:
+protected:
     vec2 Position;
-    float Angle;
-    vec2 Scale;
+    float Angle = 0;
+    vec2 Scale = 50;
 
-    Color ObjectColor;
+    Color ObjectColor = RED;
 };
