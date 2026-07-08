@@ -194,6 +194,8 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\Shape.cpp" />
+    <ClInclude Include="Game\Shape.h" />
     <None Include="..\.gitignore">
     </None>
     <ClInclude Include="Game\Ball.h" />

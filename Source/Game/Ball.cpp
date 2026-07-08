@@ -37,7 +37,7 @@ void CBall::update(float deltaTime)
     Position.X += Velocity.X * deltaTime;
     Position.Y += Velocity.Y * deltaTime;
 
-    Angle += deltaTime * 50;
+    Angle += deltaTime * Velocity.X;
 
     // Lock to edges.
     if( Position.X < 32.0f )

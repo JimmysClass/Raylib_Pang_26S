@@ -19,6 +19,9 @@
     <ClCompile Include="Game\Game.cpp">
       <Filter>Source\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Shape.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helpers\InputTypes.h">
@@ -40,6 +43,9 @@
       <Filter>Source\Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Game.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Shape.h">
       <Filter>Source\Game</Filter>
     </ClInclude>
   </ItemGroup>
