@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include "Ball.h"
+#include "Player.h"
 #include "Shape.h"
 #include "Rectangle.h"
 #include "Helpers/MathFuncs.h"
@@ -19,12 +20,15 @@ CGame::CGame()
     // Create a ball.
     Ball = new CBall(this);
 
+    Player = new CPlayer( { GetScreenWidth()/2.0f, GetScreenHeight()-50.0f } );
+
     reset();
 }
 
 CGame::~CGame()
 {
     delete Ball;
+    delete Player;
 
     for( auto texturePair : Textures )
     {
@@ -43,6 +47,7 @@ void CGame::reset()
 void CGame::update(float deltaTime)
 {
     Ball->update( deltaTime );
+    Player->update();
 }
 
 void CGame::draw()
@@ -57,6 +62,8 @@ void CGame::draw()
     {
         Ball->draw();
     }
+
+    Player->draw();
 
     //CShape shape;
     //shape.draw();
@@ -82,6 +89,14 @@ void CGame::onKey(int keyCode, KeyState keyState)
     if( Ball->isActive() )
     {
         Ball->onKey( keyCode, keyState );
+    }
+
+    if (keyState == KeyState::Pressed)
+    {
+        if (keyCode == KEY_LEFT)
+        {
+            Player->setMovementDir(-1);
+        }
     }
 }
 

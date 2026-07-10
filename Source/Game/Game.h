@@ -10,6 +10,7 @@
 #include "Helpers/Vector.h"
 
 class CBall;
+class CPlayer;
 
 class CGame
 {
@@ -35,4 +36,5 @@ private:
     std::unordered_map<std::string, Texture2D> Textures;
 
     CBall* Ball;
+    CPlayer* Player;
 };

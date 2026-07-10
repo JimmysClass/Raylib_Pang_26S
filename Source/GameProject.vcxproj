@@ -194,8 +194,12 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\GameObject.cpp" />
+    <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\Rectangle.cpp" />
     <ClCompile Include="Game\Shape.cpp" />
+    <ClInclude Include="Game\GameObject.h" />
+    <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\Rectangle.h" />
     <ClInclude Include="Game\Shape.h" />
     <None Include="..\.gitignore">
