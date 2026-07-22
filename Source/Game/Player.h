@@ -12,7 +12,8 @@ public:
     CPlayer(vec2 pos);
     ~CPlayer();
 
-    void update() override;
+    void onKey(int keyCode, KeyState keyState) override;
+    void update(float deltaTime) override;
     void draw() override;
 
     void setMovementDir(float value) { MovementDir = value; }
@@ -22,5 +23,5 @@ private:
     Sprite2D* Sprite;
 
     float MovementDir = 0;
-    float Speed = 10;
+    float Speed = 200;
 };

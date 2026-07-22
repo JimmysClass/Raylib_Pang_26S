@@ -2,6 +2,7 @@
 
 #include "raylib.h"
 #include "Helpers/Vector.h"
+#include "Helpers/InputTypes.h"
 
 class CGameObject
 {
@@ -9,7 +10,8 @@ public:
     CGameObject();
     ~CGameObject();
 
-    virtual void update() = 0;
+    virtual void onKey(int keyCode, KeyState keyState);
+    virtual void update(float deltaTime) = 0;
     virtual void draw() = 0;
 
     vec2 getPosition() { return Position; }

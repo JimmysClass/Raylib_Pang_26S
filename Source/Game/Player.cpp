@@ -15,9 +15,39 @@ CPlayer::~CPlayer()
     UnloadTexture( Texture );
 }
 
-void CPlayer::update()
+void CPlayer::onKey(int keyCode, KeyState keyState)
 {
-    Position.X += MovementDir * Speed;
+    if (keyState == KeyState::Pressed)
+    {
+        if (keyCode == KEY_LEFT || keyCode == KEY_A)
+        {
+            MovementDir--;
+        }
+        if (keyCode == KEY_RIGHT || keyCode == KEY_D)
+        {
+            MovementDir++;
+        }
+    }
+
+    if (keyState == KeyState::Released)
+    {
+        if (keyCode == KEY_LEFT || keyCode == KEY_A)
+        {
+            MovementDir++;
+        }
+        if (keyCode == KEY_RIGHT || keyCode == KEY_D)
+        {
+            MovementDir--;
+        }
+    }
+}
+
+void CPlayer::update(float deltaTime)
+{
+    vec2 dir = { MovementDir, 0 };
+    dir.normalize();
+
+    Position += dir * Speed * deltaTime;
 }
 
 void CPlayer::draw()

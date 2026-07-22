@@ -46,8 +46,11 @@ void CGame::reset()
 
 void CGame::update(float deltaTime)
 {
+    if( deltaTime > 1 )
+        deltaTime = 1/60.0f;
+
     Ball->update( deltaTime );
-    Player->update();
+    Player->update( deltaTime );
 }
 
 void CGame::draw()
@@ -91,13 +94,7 @@ void CGame::onKey(int keyCode, KeyState keyState)
         Ball->onKey( keyCode, keyState );
     }
 
-    if (keyState == KeyState::Pressed)
-    {
-        if (keyCode == KEY_LEFT)
-        {
-            Player->setMovementDir(-1);
-        }
-    }
+    Player->onKey( keyCode, keyState );
 }
 
 
